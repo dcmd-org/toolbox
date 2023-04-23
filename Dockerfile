@@ -49,3 +49,5 @@ RUN . ~/.nvm/nvm.sh &&\
     nvm install lts/hydrogen &&\
     nvm use lts/hydrogen &&\
     nvm alias default lts/hydrogen
+
+WORKDIR /app
