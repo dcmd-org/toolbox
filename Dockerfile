@@ -11,7 +11,8 @@ RUN apt update -y &&\
     software-properties-common \
     ca-certificates \
     lsb-release \
-    apt-transport-https
+    apt-transport-https \
+    build-essential
 
 # PHP 8.2
 
@@ -46,6 +47,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
 RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
 RUN . ~/.nvm/nvm.sh &&\
+    nvm cache clear &&\
     nvm install lts/hydrogen &&\
     nvm use lts/hydrogen &&\
     nvm alias default lts/hydrogen
